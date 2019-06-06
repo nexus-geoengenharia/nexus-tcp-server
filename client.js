@@ -1,12 +1,13 @@
 var net = require('net');
 
 var client = new net.Socket();
-client.connect(502, '127.0.0.1', function() {
+client.connect(502, 'nexusbr.dyndns-ip.com', function() {
 	console.log('Connected');
 	client.write('nexus');
 });
 
 client.on('data', function(data) {
+    console.log(data.toString())
 	console.log('Received: ' + data);
 	//client.destroy(); // kill client after server's response
 });

@@ -7,6 +7,9 @@ var clients = [];
 // Start a TCP Server
 net.createServer(function (socket) {
 
+    //set encode to socket
+    socket.setEncoding()
+
   // Identify this client
   socket.name = socket.remoteAddress + ":" + socket.remotePort 
 
@@ -14,7 +17,7 @@ net.createServer(function (socket) {
   clients.push(socket);
 
   // Send a nice welcome message and announce
-  socket.write("nexus243");
+  //socket.write("nexus243");
   broadcast(socket.name + " joined the chat\n", socket);
 
   // Handle incoming messages from clients.
