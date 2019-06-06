@@ -10,6 +10,7 @@
   "author": "NexusBR Team",
   "license": "MIT",
   "dependencies": {
+    "hex2dec": "^1.1.2",
     "net": "^1.0.2"
   }
 }

@@ -14,12 +14,17 @@ net.createServer(function (socket) {
   clients.push(socket);
 
   // Send a nice welcome message and announce
-  socket.write("Welcome " + socket.name + "\n");
+  socket.write("nexus243");
   broadcast(socket.name + " joined the chat\n", socket);
 
   // Handle incoming messages from clients.
   socket.on('data', function (data) {
-    broadcast(socket.name + "> " + data, socket);
+      console.log(data.toString())
+      if(data.toString() === 'nexus'){
+          broadcast('nexus243', socket)
+      }
+
+        broadcast(socket.name + "> " + data, socket);
   });
 
   // Remove the client from the list when it leaves
@@ -42,4 +47,4 @@ net.createServer(function (socket) {
 }).listen(502);
 
 // Put a friendly message on the terminal of the server.
-console.log("Chat server running at port 5000\n");
+console.log("Chat server running at port 502\n");
